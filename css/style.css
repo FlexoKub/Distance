@@ -1,0 +1,786 @@
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SFProDisplay-Medium.eot');
+    src: local('SF Pro Display Medium'), local('../fonts/SFProDisplay-Medium'),
+        url('../fonts/SFProDisplay-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SFProDisplay-Medium.woff2') format('woff2'),
+        url('../fonts/SFProDisplay-Medium.woff') format('woff'),
+        url('../fonts/SFProDisplay-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+
+    /*Точная ширина контейнера*/
+}
+
+body {
+    font-family: 'SF Pro Display';
+    background: #E5E5E5;
+    margin-top: 47px;
+    /*чтобы не залазил под шапку*/
+}
+
+.header {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    background: #0050B3;
+    position: fixed;
+    /*всегда на верху*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    /*адаптив*/
+    z-index: 99;
+
+}
+
+.header-blok {
+    margin: auto;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.m-menu {
+    border: none;
+    width: 32px;
+    height: 32px;
+    background-color: transparent;
+    padding: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 10px;
+}
+
+.m-menu .line {
+    width: 100%;
+    height: 2px;
+    background-color: #FFFFFF
+}
+
+.search {
+    padding: 0 10px;
+}
+
+.search-input {
+    /*текст*/
+    font-size: 14px;
+    line-height: 22px;
+    /*Рамка*/
+    padding: 5px 30px 5px 12px;
+    width: 100%;
+    max-width: 336px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+    /*Иконка*/
+    background-image: url(../img/Search-Ikon.svg);
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+
+}
+
+.navigation-panel {
+    margin: 0 12px 0 12px;
+}
+
+.navigation-link {
+    display: inline-block;
+    align-items: center;
+    font-size: 14px;
+    line-height: 22px;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 6px;
+}
+
+.navigation-link:before {
+    display: inline-block;
+    content: "";
+    width: 1px;
+    height: 16px;
+    background: #003A8C;
+    margin-right: 12px;
+}
+
+.navigation-link:last-child::after {
+    display: inline-block;
+    content: "";
+    width: 1px;
+    height: 16px;
+    background: #003A8C;
+    margin-left: 12px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    margin-right: 8px;
+}
+
+.user-name {
+    font-size: 14px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.icons-link {
+    position: relative;
+    /*относительная позиция*/
+    display: flex;
+    align-items: center;
+    margin-left: 17px;
+}
+
+.notification {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background: #F5222D;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 16px;
+    color: #FFFFFF;
+    font-size: 12px;
+    top: -8px;
+    left: 10px;
+}
+
+.heder-icon:hover {
+    fill: #002766;
+}
+
+.heder-icon:hover {
+    fill: #FFFFFF;
+}
+
+.icons-link:last-child::before {
+    display: inline-block;
+    content: "";
+    width: 1px;
+    height: 16px;
+    background: #003A8C;
+    margin-right: 12px;
+}
+
+.icon-panel {
+    display: flex;
+    align-items: center;
+}
+
+.contaner {
+    max-width: 1205px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-sidebar {
+    margin-top: 18px;
+    max-width: 192px;
+    margin-right: 18px;
+}
+
+.menu-sidebar .user {
+    padding-left: 10px;
+}
+
+.menu-sidebar .user-avatar {
+    width: 24px;
+    height: 24px;
+}
+
+.menu-sidebar .user-name {
+    color: #262626;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.nav-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.nav-linc {
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    color: #595959;
+    line-height: 22px;
+    font-size: 14px;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.nav-linc:hover {
+    background: #FFFFFF;
+    color: #262626;
+}
+
+.nav-text {
+    margin-left: 8px;
+}
+
+.nav-title {
+    color: #262626;
+    font-size: 12px;
+    line-height: 20px;
+    margin: 0px 0 0px 8px;
+}
+
+.nav-text-more {
+    margin-left: 12px;
+    color: #1890FF;
+}
+
+.more-icon {
+    margin-left: 4px;
+}
+
+.main-feed {
+    margin: 18px 10px 0 14px;
+    max-width: 588px;
+    flex-grow: 1;
+    /*чтобы контент занимал всю ширину блока*/
+}
+
+.create-post {
+    overflow: hidden;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+.create-post-header {
+    padding: 9px 16px;
+    background: #F5F5F5;
+}
+
+.create-post-titel {
+    color: #595959;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0;
+}
+
+.create-post-body {
+    display: flex;
+    padding: 16px 16px 24px 16px;
+}
+
+.create-post-input {
+    width: 100%;
+    margin: 0 0 0 16px;
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    flex: 0 0 auto;
+}
+
+.tag {
+    background: #F5F5F5;
+    border-radius: 48px;
+    border: none;
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+
+}
+
+.create-post-footer {
+    display: flex;
+    padding: 0 16px 16px 16px;
+    flex-wrap: wrap;
+    /*перемешение элементов на новую строку*/
+    align-items: center;
+}
+
+.create-post-footer::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #E8E8E8;
+    margin-bottom: 16px;
+}
+
+.button-text {
+    padding: 8px;
+}
+
+.button {
+    text-decoration: none;
+    margin: 8px;
+}
+
+.post {
+    padding: 16px;
+    margin: 16px 0;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-header .user-avatar {
+    width: 48px;
+    height: 48px;
+}
+
+.post-img {
+    max-width: 100%;
+    /*адаптив*/
+}
+
+.post-info-time {
+    display: flex;
+    align-items: center;
+}
+
+.post-info {
+    margin: 12px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.post-autor {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    color: #0050B3;
+    text-decoration: none;
+    width: 100%;
+    /* занимает все пространство поэтому остальное переноситься*/
+}
+
+.post-time:after {
+    display: inline-block;
+    border-radius: 50%;
+    content: "";
+    width: 4px;
+    height: 4px;
+    background: #BFBFBF;
+    margin-right: 6px;
+    margin-left: 6px;
+    vertical-align: middle;
+    /*выравнивание*/
+}
+
+.post-time {
+    font-size: 14px;
+    line-height: 22px;
+    color: #8C8C8C;
+}
+
+.post-text {
+    padding-left: 8px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #595959;
+
+}
+
+.post-text2 {
+    padding-left: 8px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #595959;
+    margin-top: 25px;
+}
+
+.post-tex-link {
+    text-decoration: none;
+    color: #1890FF;
+}
+
+.post-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.post-footer::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #E8E8E8;
+    margin-bottom: 16px;
+    margin-top: 9px;
+}
+
+.post-button {
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+    border: none;
+}
+
+.story-icon {
+    fill: #0050B3;
+}
+
+.stories-text-more {
+    font-size: 14px;
+    line-height: 22px;
+    margin-left: 12px;
+    color: #0050B3;
+}
+
+.right-sidebar {
+    margin: 18px 10px 0 0;
+    max-width: 384px;
+    flex-grow: 1;
+}
+
+.stories {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    margin-left: 24px;
+    padding: 16px;
+    padding-left: 24px;
+}
+
+.story-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.story-title {
+    margin: 0;
+    font-size: 14px;
+    line-height: 22px;
+    color: #262626;
+}
+
+.story-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: baseline;
+}
+
+.stoty-btn-linc:first-child:after {
+    content: "";
+    width: 4px;
+    height: 4px;
+    background-color: #BFBFBF;
+    border-radius: 50%;
+    display: inline-block;
+    /*чтобы появилась*/
+    margin: 0 8px 0 7px;
+    vertical-align: middle;
+}
+
+.story-icon {
+    vertical-align: sub;
+    /*вертикальное выравнивание*/
+}
+
+.stoty-btn-linc {
+    font-size: 14px;
+    line-height: 22px;
+    color: #0050B3;
+    text-decoration: none;
+}
+
+.stories-items {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.stories-btn-add {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    text-decoration: none;
+}
+
+.st-text {
+    margin-left: 12px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+.stories-text {
+    font-size: 14px;
+    line-height: 22px;
+    color: #0050B3;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+.s-text {
+    font-size: 14px;
+    line-height: 22px;
+    color: #8C8C8C;
+}
+
+.stories-linc {
+    display: flex;
+    align-items: center;
+    color: #595959;
+    line-height: 22px;
+    font-size: 14px;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.bday {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    margin: 16px 0 16px 24px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.bday-text {
+    margin-left: 8px;
+}
+
+.bday-name {
+    font-size: 14px;
+    line-height: 22px;
+    color: #0050B3;
+    font-weight: 600;
+    /*жирность*/
+}
+
+.bday-n-text {
+    font-size: 14px;
+    line-height: 22px;
+    color: #8C8C8C;
+}
+
+.fanpage {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    margin-left: 24px;
+}
+
+.fanpage-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 9px 9px 16px;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.fanpage-header-text {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 22px;
+    color: #595959;
+}
+
+.fanpage-stats {
+    display: flex;
+    align-items: flex-start;
+    margin: 16px;
+    padding-bottom: 23px;
+    border-bottom: 1px solid#D9D9D9;
+}
+
+.ststs {
+    margin-left: 12px;
+}
+
+.s-header {
+    font-size: 14px;
+    line-height: 22px;
+    color: #0050B3;
+    font-weight: 600;
+}
+
+.group1 {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.icon-group1 {
+    margin-right: 4px;
+}
+
+.name-group1 {
+    align-items: center;
+    color: #8C8C8C;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.group2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.icon-group2 {
+    margin-right: 4px;
+}
+
+.name-group2 {
+    align-items: center;
+    color: #8C8C8C;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.notifications {
+    width: 17px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F5F5F5;
+    border: 1px solid #D9D9D9;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-left: 5px;
+    color: #595959;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.fanpage-button {
+    display: flex;
+    border: 1px;
+    justify-content: space-between;
+    margin: 0 16px;
+}
+
+.btn-likes {
+    flex-basis: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    color: #595959;
+    padding: 5px 0;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+}
+
+.btn-likes:hover {
+    border: 1px solid rgb(24, 144, 255);
+    color: #1890FF;
+}
+
+.btn-likes:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.btn-likes:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.fanpage-likes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 16px 0 16px 0;
+}
+
+.number-likes {
+    font-size: 24px;
+    line-height: 32px;
+    color: #262626;
+}
+
+.inweek-likes {
+    font-size: 14px;
+    line-height: 22px;
+    color: #8C8C8C;
+    margin-bottom: 16px;
+}
+
+/*адаптив*/
+@media (max-width: 800px) {
+    .right-sidebar {
+        display: none;
+    }
+
+    .menu-sidebar {
+        margin-top: 4px;
+        margin-right: 4px;
+    }
+
+    .main-feed {
+        margin-top: 4px;
+    }
+
+    .right-sidebar {
+        margin-top: 4px;
+    }
+
+    .stories {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 670px) {
+    .header .user {
+        display: none;
+    }
+
+    .navigation-panel {
+        display: none;
+    }
+
+    .main-feed {
+        max-width: 100%;
+    }
+
+    .menu-sidebar {
+        position: fixed;
+        left: 0;
+        top: 47;
+        max-width: 270px;
+        background-color: #f1f1f1;
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+    }
+
+    .menu-sidebar.active {
+        transform: translateX(0%);
+    }
+
+    .m-menu {
+        display: flex;
+    }
+}
